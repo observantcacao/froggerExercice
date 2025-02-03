@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossy Toad</title>
+    <style>
+        /*utilisé chat pour m'aider pour le style*/
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            flex-direction: column;
+            font-family: monospace;
+            color: white;
+        }
+
+        #playground {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            font-size: 25px;
+        }
+
+        /*met les couleur pour les case ennemis et sois meme*/
+        .cell.active {
+            background-color: #d3fdd5;
+        }
+
+        .cell.ennemi {
+            background-color: rgb(255, 211, 211);
+        }
+
+        /* /////////////////////////////// (pour les div de déplacement)*/
+        #up,
+        #down,
+        #left,
+        #right {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        /* Zone Haut */
+        #up {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 20%;
+        }
+
+        /* Zone Bas */
+        #down {
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 20%;
+        }
+
+        /* Zone Gauche */
+        #left {
+            top: 50%;
+            left: 0;
+            width: 50%;
+            height: 60%;
+            transform: translateY(-50%);
+        }
+
+        /* Zone Droite */
+        #right {
+            top: 50%;
+            right: 0;
+            width: 50%;
+            height: 60%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titre">Crossy Frog</h1>
+    <div id="playground">
+
+    </div>
+    <h1 id="announce"></h1>
+
+    <!-- controles deplacement -->
+    <div id="up"></div>
+    <div id="down"></div>
+    <div id="left"></div>
+    <div id="right"></div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
